@@ -17,7 +17,7 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 # Avatar URLs
-user_avatar_url = "https://api.dicebear.com/8.x/pixel-art/svg?seed=Jasmine&beardProbability=0&clothing=variant01&clothingColor=ffd969&eyesColor=876658&glassesColor=191919,323232&hair=short04&hairColor=28150a&skinColor=b68655"
+user_avatar_url = "https://media.licdn.com/dms/image/C4D03AQFcYp5D50_vhw/profile-displayphoto-shrink_800_800/0/1535476223216?e=1724889600&v=beta&t=w7RaYLBtq2kAmsJ_mjhqlsh6aFzmV8whchry291dH2o"
 
 specialist_id_caption = {
   "Steve": {
@@ -58,7 +58,7 @@ def initialize_session_state():
             st.session_state[key] = default
 
 def display_header():
-    st.set_page_config(page_title="OP", page_icon="🤖", initial_sidebar_state="collapsed")
+    st.set_page_config(page_title="Steve", page_icon="👴🏻", initial_sidebar_state="collapsed")
     specialist = st.session_state.specialist
     specialist_avatar = specialist_id_caption[st.session_state.specialist]["avatar"]
     st.markdown(
