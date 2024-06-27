@@ -1,0 +1,1 @@
+summary_prompt = "Summarize the following text for future LLM use. The LLM needs to understand the user.:\n\n"
