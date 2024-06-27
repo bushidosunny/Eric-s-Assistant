@@ -48,7 +48,10 @@ def initialize_session_state():
         "assistant_id": primary_specialist_id,
         "specialist_avatar": primary_specialist_avatar,
         "should_rerun": False,
-        "authentication_status": None
+        "authentication_status": None,
+        "logout": None,
+        "name": "",
+        "username": ""
     }
     for key, default in state_keys_defaults.items():
         if key not in st.session_state:
