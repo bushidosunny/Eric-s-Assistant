@@ -25,7 +25,7 @@ specialist_id_caption = {
     "avatar": "https://cdn.changelog.com/uploads/avatars/people/4WOwE/avatar_large.jpg?v=63798429560"
   },
   "Hypothesis Explorer": {
-    "assistant_id": "asst_CFjyIpJwzSpIi1iQmtjduHtU",
+    "assistant_id": "asst_qEXSokDpCnEdyKVuvAxaXajj",
     "caption": "Decision helper by clarifying multple outcomes",
     "avatar": "https://cdn.pixabay.com/photo/2013/07/12/19/30/enlightenment-154910_1280.png"
   }
