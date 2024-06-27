@@ -1,0 +1,22 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    eric:
+      email: null
+      failed_login_attempts: 0
+      logged_in: true
+      name: guest
+      password: Think!
+    sunny:
+      email: sunny@mail.com
+      failed_login_attempts: 0
+      logged_in: true
+      name: Sunny
+      password: $2b$12$sPIjCHMCW/d6ovsQpQm7mOpeRR4jjwVK4AeThq4UwOe5WlhECyElq
+
+pre-authorized:
+  emails:
+  - eric.chung@lighthavencapital.com

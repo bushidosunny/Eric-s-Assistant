@@ -6,6 +6,7 @@ from openai import OpenAI
 from langchain_core.messages import HumanMessage, AIMessage
 from datetime import datetime
 from prompts import *
+from login import *
 
 # Load environment variables
 load_dotenv()
@@ -46,7 +47,8 @@ def initialize_session_state():
         "specialist": primary_specialist,
         "assistant_id": primary_specialist_id,
         "specialist_avatar": primary_specialist_avatar,
-        "should_rerun": False        
+        "should_rerun": False,
+        "authentication_status": None
     }
     for key, default in state_keys_defaults.items():
         if key not in st.session_state:
@@ -222,10 +224,10 @@ def display_sidebar():
 
             # Ensure choose_specialist_radio is called here with a unique key
             
-        #container = st.container()
-        #container.float(float_css_helper(bottom="10px"))
-        #with container:
-            #authenticate_user()
+        container = st.container()
+        container.float(float_css_helper(bottom="10px"))
+        with container:
+            authenticate_user()
 
 # Sidebar tabs and functions
 def display_functions_tab():
@@ -315,11 +317,20 @@ def main():
         
     initialize_session_state()
     display_header()
-    display_chat_history()
-    user_input()
-    display_sidebar()
-    print(st.session_state.thread_id)
-
+    
+    name, authentication_status, username = authenticator.login('main')
+    
+    if authentication_status == True:
+        # User is authenticated, show the app content# Create a thread where the conversation will happen and keep Streamlit from initiating a new session state
+        if "thread_id" not in st.session_state:
+            thread = client.beta.threads.create()
+            st.session_state.thread_id = thread.id
+        display_chat_history()
+        user_input()
+        display_sidebar()
+        print(st.session_state.thread_id)
+    else:
+        authenticate_user()
 
 if __name__ == '__main__':
     main()
