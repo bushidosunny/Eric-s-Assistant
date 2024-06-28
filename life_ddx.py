@@ -105,7 +105,7 @@ def display_chat_history():
             with st.chat_message("user", avatar=user_avatar_url):                
                 st.markdown(message.content, unsafe_allow_html=True)
         else:
-            avatar_url = st.session_state.specialist_avatar
+            avatar_url = message.avatar
             with st.chat_message("AI", avatar=avatar_url):
                 st.markdown(message.content, unsafe_allow_html=True)
 
